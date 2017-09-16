@@ -6,4 +6,9 @@ samtools index regions-for-publication-sorted.bam
 
 bigWigToWig -chrom=chr6 -start=48617000 -end=48620000 wgEncodeCrgMapabilityAlign36mer.bigWig regions-for-publication-mappability.wig
 
+# wig file was not drawn correctly on border
+
+fetchChromSizes mm9 > mm9.genome
+
+wigToBigWig regions-for-publication-mappability.wig mm9.genome regions-for-publication-mappability.bw
 
