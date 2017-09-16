@@ -1,0 +1,9 @@
+bedtools intersect -nobuf -wa -b regions-for-publication.bed -a SRR054916_MM_H0_slop_mappable.coverage.bedgraph > regions-for-publication-coverage.bedgraph
+
+bedtools intersect -nobuf -wa -b regions-for-publication.bed -a SRR054916_MM_H0_sorted.bam > regions-for-publication-sorted.bam
+
+samtools index regions-for-publication-sorted.bam
+
+bigWigToWig -chrom=chr6 -start=48617000 -end=48620000 wgEncodeCrgMapabilityAlign36mer.bigWig regions-for-publication-mappability.wig
+
+
